@@ -58,7 +58,7 @@ class AdminAccountController extends Controller
     public function show($username)
     {
         $data['admin'] = Admin::findOrFail($username);
-        return view('profile.show', $data);
+        return view('profile.account', $data);
     }
 
     /**
@@ -69,8 +69,7 @@ class AdminAccountController extends Controller
      */
     public function edit($id)
     {
-        // $data['admin'] = Admin::findOrFail($id);
-        // return view('profile.edit', $data);
+        //
     }
 
     /**
@@ -84,8 +83,7 @@ class AdminAccountController extends Controller
     {
         $admin = Admin::findOrFail($id);
         $request->validate([
-            'email' => 'required|email|exists:admins,email',
-            // 'email' => 'required|email|unique:admins,email,'.$admin->id,
+            'email' => 'required|email|unique:admins,email,'.$admin->id,
         ]);
 
         try {
@@ -93,7 +91,7 @@ class AdminAccountController extends Controller
                 'email' => $request->email,
             ]);
 
-            return redirect()->route('admin.dashboard')->with('success', 'Profile updated successfully.');
+            return redirect()->back()->with('success', 'Profile updated successfully.');
 
         } catch (\Exception $e) {
             return redirect()->back()->with('error', $e->getMessage());
@@ -104,7 +102,7 @@ class AdminAccountController extends Controller
     {
         $admin = Admin::findOrFail($id);
         $request->validate([
-            'password' => 'required|confirmed|min:8',
+            'password' => 'required|string|confirmed|min:8',
         ]);
 
         try {
@@ -112,7 +110,7 @@ class AdminAccountController extends Controller
                 'password' => Hash::make($request->password),
             ]);
 
-            return redirect()->route('admin.dashboard')->with('success', 'Password updated successfully.');
+            return redirect()->back()->with('success', 'Password updated successfully.');
 
         } catch (\Exception $e) {
             return redirect()->back()->with('error', $e->getMessage());

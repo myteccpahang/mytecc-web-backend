@@ -31,13 +31,13 @@
                 <!-- Sidebar -->
                 <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
                     <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-                        <a href="{{ route('admin.dashboard') }}" class="mx-auto d-block my-3 text-decoration-none">
+                        <a href="{{ route('dashboard') }}" class="mx-auto d-block my-3 text-decoration-none">
                             <img src="{{ asset('img/mytecc-logo-navbar.png') }}" alt="MYTECC Logo">
                         </a>
 
                         <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                             <li>
-                                <a href="{{ route('admin.dashboard') }}" class="nav-link px-0 align-middle link-danger">
+                                <a href="{{ route('dashboard') }}" class="nav-link px-0 align-middle link-danger">
                                     <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span>
                                 </a>
                             <li>
@@ -117,7 +117,7 @@
                                                 {{ Auth::user()->username }}
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
-                                                <a class="dropdown-item" href="{{ route('admin.account.show' , $id = Auth::id()) }}">Account</a>
+                                                <a class="dropdown-item" href="{{ route('account.show' , $id = Auth::id()) }}">Account</a>
                                                 <hr class="dropdown-divider">
                                                 <a class="dropdown-item text-danger" href="{{ route('logout') }}"
                                                    onclick="event.preventDefault();
@@ -138,21 +138,21 @@
 
                     <main class="py-4">
                         @if (session('success'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('success') }}
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <i class="fs-5 bi bi-check-circle-fill align-middle"></i>
+                                <span> {{ session('success') }}</span>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
                         @elseif (session('error'))
-                            <div class="alert alert-danger" role="alert">
-                                {{ session('error') }}
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <i class="fs-5 bi bi-exclamation-circle-fill align-middle"></i>
+                                <span> {{ session('error') }}</span>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
                         @endif
 
                         @yield('content')
                     </main>
-
-                    <footer class="footer px-2 py-3 position-fixed bottom-0 w-100">
-                        <small>&copy; 2021 ~ {{ date('Y') }} {{ config('app.name') }}. All Rights Reserved.</small>
-                    </footer>
                 </div>
             </div>
         </div>

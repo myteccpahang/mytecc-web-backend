@@ -26,19 +26,23 @@
 <body>
     <div id="app">
         @if (session('success'))
-            <div class="alert alert-success" role="alert">
-                {{ session('success') }}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <i class="fs-5 bi bi-check-circle-fill align-middle"></i>
+                <span> {{ session('success') }}</span>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @elseif (session('error'))
-            <div class="alert alert-danger" role="alert">
-                {{ session('error') }}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <i class="fs-5 bi bi-exclamation-circle-fill align-middle"></i>
+                <span> {{ session('error') }}</span>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @endif
 
         <!-- Navbar -->
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ route('login') }}">
                     <img src="{{ asset('img/mytecc-logo-navbar.png') }}" alt="MYTECC Logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -98,10 +102,8 @@
         </main>
 
         <footer class="footer py-3 position-fixed bottom-0 w-100">
-            <div class="container">
-                <div class="footer-copyright text-center">
-                    <small>&copy; 2021 ~ {{ date('Y') }} {{ config('app.name') }}. All Rights Reserved.</small>
-                </div>
+            <div class="footer-copyright text-center text-muted">
+                <small>&copy; 2021 ~ {{ date('Y') }} {{ config('app.name') }}. All Rights Reserved.</small>
             </div>
         </footer>
     </div>

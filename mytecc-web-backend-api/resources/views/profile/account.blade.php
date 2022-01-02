@@ -8,7 +8,7 @@
         <div class="col">
             <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
                 <ol class="breadcrumb mb-0">
-                    <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}" class="link-danger">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('dashboard') }}" class="link-danger">Dashboard</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Account</li>
                     <li class="breadcrumb-item active" aria-current="page">{{ $admin->username }}</li>
                 </ol>
@@ -23,7 +23,7 @@
                     <div class="d-flex justify-content-between">
                         <h4>Account</h4>
                         <div>
-                            <a href="{{ route('admin.dashboard') }}" class="btn btn-secondary">Back</a>
+                            <a href="{{ route('dashboard') }}" class="btn btn-secondary">Back</a>
                         </div>
                     </div>
                 </div>
@@ -40,7 +40,7 @@
                         <input type="text" value="{{ (old('username')) ? old('username') : $admin->username }}" class="form-control" id="username" readonly>
                     </div>
                     <div>
-                        <form action="{{ route('admin.account.updateAccount', $admin->id) }}" method="POST" enctype="multipart/form-data" class="mb-5">
+                        <form action="{{ route('account.updateAccount', $admin->id) }}" method="POST" enctype="multipart/form-data" class="mb-5">
                             @csrf
                             @method('PUT')
                             <div class="form-group has-validation col-md-6 mb-3">
@@ -58,8 +58,7 @@
                     <hr>
                     <div class="mt-5">
                         <h5 class="mb-4">Change Password</h5>
-                        {{-- <p>Want to change your password? <a class="btn-link link-danger" href="{{ route('password.request') }}">Click here</a></p> --}}
-                        <form action="{{ route('admin.account.updatePassword', $admin->id) }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('account.updatePassword', $admin->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                             <div class="form-group col-md-6 mb-3">
