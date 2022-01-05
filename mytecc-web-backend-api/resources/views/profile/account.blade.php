@@ -62,6 +62,15 @@
                             @csrf
                             @method('PUT')
                             <div class="form-group col-md-6 mb-3">
+                                <label for="current-password">Current Password <span class="text-danger">*</span></label>
+                                <input type="password" class="form-control @error('current_password') is-invalid @enderror" id="current-password" name="current_password" required>
+                                @error('current_password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="form-group col-md-6 mb-3">
                                 <label for="password">Password <span class="text-danger">*</span></label>
                                 <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password" required>
                                 @error('password')

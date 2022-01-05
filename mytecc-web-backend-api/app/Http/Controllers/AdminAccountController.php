@@ -100,18 +100,25 @@ class AdminAccountController extends Controller
 
     public function updatePassword(Request $request, $id)
     {
-        $admin = Admin::findOrFail($id);
-        $request->validate([
-            'password' => 'required|string|confirmed|min:8',
+        $data = $request->validate([
+            'current_password' => 'required|string',
+            'password' => 'required|string|confirmed|min:8|different:current_password',
         ]);
 
         try {
-            $admin->update([
-                'password' => Hash::make($request->password),
-            ]);
+            $admin = Admin::findOrFail($id);
 
-            return redirect()->back()->with('success', 'Password updated successfully.');
+            if(!Hash::check($data['current_password'], $admin->password)) {
+                return redirect()->back()->with('error', 'Current password not match our record.');
 
+            }
+            else {
+                $admin->update([
+                    'password' => Hash::make($data['password']),
+                ]);
+
+                return redirect()->back()->with('success', 'Password updated successfully.');
+            }
         } catch (\Exception $e) {
             return redirect()->back()->with('error', $e->getMessage());
         }
