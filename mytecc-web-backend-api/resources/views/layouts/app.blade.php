@@ -114,7 +114,7 @@
                                     @else --}}
                                         <li class="nav-item dropdown">
                                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                                {{ Auth::user()->username }}
+                                                <span><i class="fs-4 bi bi-person-circle align-middle me-1"></i> {{ Auth::user()->username }}</span>
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
                                                 <a class="dropdown-item" href="{{ route('account.show' , $id = Auth::id()) }}">Account</a>
