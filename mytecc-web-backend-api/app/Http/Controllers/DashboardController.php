@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Link;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -24,10 +25,10 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        // $links = Link::all();
+        $links = Link::all()->where('status', 'Enabled');
         $users = User::all();
         // $products = Product::all();
         // $orders = Order::all();
-        return view('dashboard', compact('users'));
+        return view('dashboard', compact('users','links'));
     }
 }

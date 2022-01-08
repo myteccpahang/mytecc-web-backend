@@ -23,8 +23,7 @@
                     <div class="card-text">
                         <div class="d-flex justify-content-between">
                             <p class="align-self-center mb-0">Total Links <br>on Live</p>
-                            {{-- <p class="fs-2 fw-bold">{{ $links_count }}</p> --}}
-                            <p class="fs-2 fw-bold mb-0">0</p>
+                            <p class="fs-2 fw-bold mb-0">{{ count($links) }}</p>
                         </div>
                     </div>
                 </div>
@@ -89,8 +88,8 @@
                         <span>{{ date('D, d M Y') }}</span>
                     </div>
                     <div class="card-text">
-                        {{-- <p>You don't have any orders today.</p> --}}
-                        <table class="table">
+                        <p>You don't have any orders today.</p>
+                        {{-- <table class="table">
                             <thead>
                                 <tr>
                                     <th class="text-center">#</th>
@@ -111,7 +110,7 @@
                                     <td class="text-center"><span class="badge bg-warning text-dark">pending</span></td>
                                 </tr>
                             </tbody>
-                        </table>
+                        </table> --}}
                     </div>
                     <div>
                         <a href="#" class="btn btn-danger btn-sm mt-3">View All Orders</a>

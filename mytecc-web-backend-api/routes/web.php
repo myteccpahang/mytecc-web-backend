@@ -9,6 +9,7 @@ use App\Http\Controllers\Auth\ConfirmPasswordController;
 use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminAccountController;
+use App\Http\Controllers\LinkController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,8 +49,22 @@ Route::prefix('admin')->group(function () {
 
     //Admin Dashboard
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
-});
 
-Route::get('profile/{id}', [AdminAccountController::class, 'show'])->name('account.show');
-Route::put('profile/{id}/update-account', [AdminAccountController::class, 'updateAccount'])->name('account.updateAccount');
-Route::put('profile/{id}/update-password', [AdminAccountController::class, 'updatePassword'])->name('account.updatePassword');
+    //Admin Account Settings
+    Route::get('account/{id}', [AdminAccountController::class, 'show'])->name('account.show');
+    Route::put('account/{id}/update-account', [AdminAccountController::class, 'updateAccount'])->name('account.updateAccount');
+    Route::put('account/{id}/update-password', [AdminAccountController::class, 'updatePassword'])->name('account.updatePassword');
+
+    // Links CRUD Routes
+    Route::get('links/create', [LinkController::class, 'create'])->name('links.create');
+    Route::post('links/store', [LinkController::class, 'store'])->name('links.store');
+
+    Route::get('links', [LinkController::class, 'index'])->name('links.index');
+    Route::get('links/{id}', [LinkController::class, 'show'])->name('links.show');
+
+    Route::get('links/{id}/edit', [LinkController::class, 'edit'])->name('links.edit');
+    Route::patch('links/{id}/update', [LinkController::class, 'update'])->name('links.update');
+    
+    Route::delete('links/{id}/delete', [LinkController::class, 'destroy'])->name('links.delete');
+
+});
