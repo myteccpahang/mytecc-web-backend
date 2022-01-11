@@ -34,7 +34,7 @@
                                 <tr>
                                     <th class="text-center">#</th>
                                     <th>Link Name</th>
-                                    <th>Link URL</th>
+                                    <th class="text-center">Link URL</th>
                                     <th class="text-center">Index</th>
                                     <th class="text-center">Status</th>
                                     <th class="text-center">Action</th>
@@ -46,7 +46,9 @@
                                         <tr>
                                             <td class="align-middle text-center">{{ $link->id }}</td>
                                             <td class="align-middle text-uppercase">{{ $link->link_name }}</td>
-                                            <td class="align-middle col-5"><a href="{{ $link->link_url }}" target="_blank">{{ $link->link_url }}</a></td>
+                                            <td class="align-middle text-center">
+                                                <a href="{{ $link->link_url }}" target="_blank"><i class="bi bi-box-arrow-up-right"></i></a>
+                                            </td>
                                             <td class="align-middle text-center">{{ $link->index }}</td>
                                             <td class="align-middle text-center">
                                                 @if ($link->status == "Enabled")
