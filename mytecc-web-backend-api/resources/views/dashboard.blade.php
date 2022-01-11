@@ -89,28 +89,30 @@
                     </div>
                     <div class="card-text">
                         <p>You don't have any orders today.</p>
-                        {{-- <table class="table">
-                            <thead>
-                                <tr>
-                                    <th class="text-center">#</th>
-                                    <th>Username</th>
-                                    <th>Product</th>
-                                    <th class="text-center">Quantity</th>
-                                    <th class="text-center">Price</th>
-                                    <th class="text-center">Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="text-center">1</td>
-                                    <td>syhrzkwn</td>
-                                    <td>MYTECC Lanyard</td>
-                                    <td class="text-center">x1</td>
-                                    <td class="text-center">RM10</td>
-                                    <td class="text-center"><span class="badge bg-warning text-dark">pending</span></td>
-                                </tr>
-                            </tbody>
-                        </table> --}}
+                        {{--<div class="table-responsive">
+                                <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">#</th>
+                                        <th>Username</th>
+                                        <th>Product</th>
+                                        <th class="text-center">Quantity</th>
+                                        <th class="text-center">Price</th>
+                                        <th class="text-center">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center">1</td>
+                                        <td>syhrzkwn</td>
+                                        <td>MYTECC Lanyard</td>
+                                        <td class="text-center">x1</td>
+                                        <td class="text-center">RM10</td>
+                                        <td class="text-center"><span class="badge bg-warning text-dark">pending</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>--}}
                     </div>
                     <div>
                         <a href="#" class="btn btn-danger btn-sm mt-3">View All Orders</a>
