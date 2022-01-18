@@ -27,7 +27,7 @@
                     </div>
                 </div>
 
-                <div class="card-body px-5 py-4">
+                <div class="card-body">
                     <div class="table-responsive">
                         <table class="w-100 table">
                             <thead class="table-light">
