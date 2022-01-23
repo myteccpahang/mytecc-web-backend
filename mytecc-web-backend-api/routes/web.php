@@ -9,6 +9,7 @@ use App\Http\Controllers\Auth\ConfirmPasswordController;
 use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminAccountController;
+use App\Http\Controllers\Homepage\AboutUsController;
 use App\Http\Controllers\LinkController;
 
 /*
@@ -64,7 +65,21 @@ Route::prefix('admin')->group(function () {
 
     Route::get('links/{id}/edit', [LinkController::class, 'edit'])->name('links.edit');
     Route::patch('links/{id}/update', [LinkController::class, 'update'])->name('links.update');
-    
+
     Route::delete('links/{id}/delete', [LinkController::class, 'destroy'])->name('links.delete');
 
+    // Website
+    Route::prefix('website')->group(function () {
+
+        // About Us CRUD Routes
+        Route::get('about-us', [AboutUsController::class, 'index'])->name('website.aboutUs');
+        Route::get('about-us/{id}/edit', [AboutUsController::class, 'edit'])->name('website.aboutUs.edit');
+        Route::patch('about-us/{id}/update', [AboutUsController::class, 'update'])->name('website.aboutUs.update');
+
+        // Program & Activity CRUD Routes
+        Route::view('program-and-activity', 'website.programAndActivity')->name('website.programAndActivity'); // temporary
+
+        // Team Members CRUD Routes
+        Route::view('team-members', 'website.teamMembers')->name('website.teamMembers'); // temporary
+    });
 });

@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\v1\LinkController;
+use App\Http\Controllers\Api\v1\HomepageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +20,8 @@ use App\Http\Controllers\Api\v1\LinkController;
 //     return $request->user();
 // });
 
+// links.myteccpahang.com
 Route::get('links', [LinkController::class, 'index']);
+
+// myteccpahang.com
+Route::get('homepage', [HomepageController::class, 'index']);
