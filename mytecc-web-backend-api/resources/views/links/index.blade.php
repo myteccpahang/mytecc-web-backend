@@ -22,7 +22,7 @@
                     <div class="d-flex justify-content-between">
                         <h4>Links</h4>
                         <div>
-                            <a href="{{ route('links.create') }}" class="btn btn-success"><i class="bi bi-plus-lg"></i></a>
+                            <a href="{{ route('links.create') }}" class="btn btn-success"><i class="bi bi-plus-lg"></i> Link</a>
                         </div>
                     </div>
                 </div>
@@ -79,7 +79,7 @@
                                     @endforeach
                                 @else
                                     <tr>
-                                        <td class="align-middle text-center">There is no data</td>
+                                        <td colspan="6" class="align-middle text-center py-3">There is no data</td>
                                     </tr>
                                 @endif
 
@@ -87,14 +87,10 @@
                         </table>
                     </div>
 
-                    {{-- Pagination --}}
-                    {{-- <div class="d-flex justify-content-end mt-2">
-                        {{-- {!! $links->links() !!}
-                        {!! $links->appends(\Request::except('page'))->render() !!}
-                    </div>
-                    <div class="d-flex justify-content-end">
+                    <div class="d-flex justify-content-between mt-3">
                         <small>Showing {{$links->count()}} of {{ $links->total() }} link(s).</small>
-                    </div> --}}
+                        {!! $links->links() !!}
+                    </div>
                 </div>
             </div>
         </div>

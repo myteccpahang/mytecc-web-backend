@@ -20,12 +20,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <div class="d-flex justify-content-between">
-                        <h4>Edit Link</h4>
-                        <div>
-                            <a href="{{ route('links.index') }}" class="btn btn-danger">Cancel</a>
-                        </div>
-                    </div>
+                    <h4>Edit Link</h4>
                 </div>
 
                 <div class="card-body p-5">
@@ -80,6 +75,7 @@
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary">Update</button>
+                        <a href="{{ route('links.index') }}" class="btn btn-link link-danger">Cancel</a>
                     </form>
                 </div>
             </div>
