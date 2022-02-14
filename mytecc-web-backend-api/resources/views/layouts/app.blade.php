@@ -83,7 +83,7 @@
                             </li>
                             <li>
                                 <a href="#submenu4" class="nav-link px-0 align-middle link-danger disabled">
-                                    <i class="fs-4 bi bi-basket"></i>
+                                    <i class="fs-4 bi bi-bag"></i>
                                     <span class="ms-1 d-none d-sm-inline">Orders</span>
                                 </a>
                             </li>
