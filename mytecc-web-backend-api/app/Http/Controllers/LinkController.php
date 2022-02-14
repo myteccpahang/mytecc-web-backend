@@ -19,8 +19,7 @@ class LinkController extends Controller
      */
     public function index()
     {
-        // $links = Link::sortable()->paginate(5);
-        $links = Link::all();
+        $links = Link::paginate(10);
         return view('links.index', compact('links'));
     }
 
