@@ -10,6 +10,7 @@ use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminAccountController;
 use App\Http\Controllers\Homepage\AboutUsController;
+use App\Http\Controllers\Homepage\ProgramController;
 use App\Http\Controllers\LinkController;
 
 /*
@@ -72,12 +73,19 @@ Route::prefix('admin')->group(function () {
     Route::prefix('website')->group(function () {
 
         // About Us CRUD Routes
-        Route::get('about-us', [AboutUsController::class, 'index'])->name('website.aboutUs');
         Route::get('about-us/{id}/edit', [AboutUsController::class, 'edit'])->name('website.aboutUs.edit');
         Route::patch('about-us/{id}/update', [AboutUsController::class, 'update'])->name('website.aboutUs.update');
 
+        Route::get('about-us', [AboutUsController::class, 'index'])->name('website.aboutUs');
+
         // Program & Activity CRUD Routes
-        Route::view('program-and-activity', 'website.programAndActivity')->name('website.programAndActivity'); // temporary
+        Route::get('program-and-activity/create', [ProgramController::class, 'create'])->name('website.programAndActivity.create');
+        Route::post('program-and-activity/store', [ProgramController::class, 'store'])->name('website.programAndActivity.store');
+
+        Route::get('program-and-activity', [ProgramController::class, 'index'])->name('website.programAndActivity');
+
+        Route::get('program-and-activity/{id}/edit', [ProgramController::class, 'edit'])->name('website.programAndActivity.edit');
+        Route::patch('program-and-activity/{id}/update', [ProgramController::class, 'update'])->name('website.programAndActivity.update');
 
         // Team Members CRUD Routes
         Route::view('team-members', 'website.teamMembers')->name('website.teamMembers'); // temporary
