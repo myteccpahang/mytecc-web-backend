@@ -90,7 +90,7 @@
                                     @endforeach
                                 @else
                                     <tr>
-                                        <td colspan="7" class="align-middle text-center py-3">There is no data</td>
+                                        <td colspan="8" class="align-middle text-center py-3">There is no data</td>
                                     </tr>
                                 @endif
 
