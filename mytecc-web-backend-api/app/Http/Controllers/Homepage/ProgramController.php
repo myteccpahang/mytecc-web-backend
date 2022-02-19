@@ -89,7 +89,8 @@ class ProgramController extends Controller
      */
     public function show($id)
     {
-        //
+        $data['program'] = Program::findOrFail($id);
+        return view('website.programs.show', $data);
     }
 
     /**
@@ -161,6 +162,15 @@ class ProgramController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $program = Program::findOrFail($id);
+
+        try {
+            $program->delete();
+
+            return redirect()->route('website.programAndActivity')->with('success', 'Link deleted successfully.');
+
+        } catch (\Exception $e) {
+            return redirect()->route('website.programAndActivity')->with('error', 'Something went wrong. ' .$e->getMessage());
+        }
     }
 }
