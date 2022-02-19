@@ -27,7 +27,7 @@
                          <a class="nav-link bg-dark active" href="{{ route('website.programAndActivity') }}">Program & Activity</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link link-dark" href="{{ route('website.teamMembers') }}">Team Members</a>
+                            <a class="nav-link link-dark" href="{{ route('website.teamMembers.index') }}">Team Members</a>
                         </li>
                     </ul>
                 </div>
@@ -74,10 +74,10 @@
                                                         <i class="bi bi-three-dots"></i>
                                                     </button>
                                                     <ul class="dropdown-menu dropdown-menu-end">
-                                                        <li><a href="" class="dropdown-item" type="button">View</a></li>
+                                                        <li><a href="{{ route('website.programAndActivity.show', $program->id) }}" class="dropdown-item" type="button">View</a></li>
                                                         <li><a href="{{ route('website.programAndActivity.edit', $program->id) }}" class="dropdown-item" type="button">Edit</a></li>
                                                         <li>
-                                                            <form action="" method="POST">
+                                                            <form action="{{ route('website.programAndActivity.delete', $program->id) }}" method="POST">
                                                                 @csrf
                                                                 @method('DELETE')
                                                                 <button type="submit" class="dropdown-item text-danger">Delete</button>

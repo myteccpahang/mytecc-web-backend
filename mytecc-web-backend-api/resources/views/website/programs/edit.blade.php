@@ -46,7 +46,7 @@
                         </div>
                         <div class="form-group mb-2">
                             <label for="description">Description</label>
-                            <textarea type="text" value="{{ (old('description')) ? old('description') : $program->description }}" style="height: 100px" class="form-control" id="description" name="description"></textarea>
+                            <textarea type="text" value="{{ (old('description')) ? old('description') : $program->description }}" style="height: 100px" class="form-control" id="description" name="description">{{ (old('description')) ? old('description') : $program->description }}</textarea>
                             @if ($errors->any('description'))
                                 <span class="text-danger" role="alert">
                                     {{ $errors->first('description') }}
@@ -102,8 +102,9 @@
                         </div>
                         <div class="form-group col-md-6 mb-2">
                             <label for="img">Image</label>
+                            <img src="{{ asset($program->img) }}" class="form-control mb-2" style="width:auto; height:200px;" id="image" name="image">
                             <input type="file" value="{{ (old('img')) ? old('img') : $program->img }}" class="form-control" id="img" name="img">
-                            <small><span class="text-danger">*</span>Only accept .jpg .jpeg .png and max file size 500kb</small>
+                            <span><i class="bi bi-info-circle"></i> Only accept .jpg .jpeg .png and max file size 500kb</span>
                             @if ($errors->any('img'))
                                 <span class="text-danger" role="alert">
                                     {{ $errors->first('img') }}

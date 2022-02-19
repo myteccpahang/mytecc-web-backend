@@ -103,7 +103,7 @@
                         <div class="form-group col-md-6 mb-2">
                             <label for="img">Image</label>
                             <input type="file" value="{{ old('img') }}" class="form-control" id="img" name="img">
-                            <small><span class="text-danger">*</span>Only accept .jpg .jpeg .png and max file size 500kb</small>
+                            <span><i class="bi bi-info-circle"></i> Only accept .jpg .jpeg .png and max file size 500kb</span>
                             @if ($errors->any('img'))
                                 <span class="text-danger" role="alert">
                                     {{ $errors->first('img') }}

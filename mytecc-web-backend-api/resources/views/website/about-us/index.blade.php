@@ -27,15 +27,11 @@
                          <a class="nav-link link-dark" href="{{ route('website.programAndActivity') }}">Program & Activity</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link link-dark" href="{{ route('website.teamMembers') }}">Team Members</a>
+                            <a class="nav-link link-dark" href="{{ route('website.teamMembers.index') }}">Team Members</a>
                         </li>
                     </ul>
                 </div>
                 <div class="card-body p-5">
-                    <div class="d-flex justify-content-end mb-3">
-                        <a href="{{ route('website.aboutUs.edit', $aboutUs->id) }}" class="btn btn-primary"><i class="bi bi-pencil-square"></i> Edit</a>
-                    </div>
-
                     <div class="form-group mb-2">
                         <label for="title">Title</label>
                         <input type="text" value="{{ $aboutUs->title }}" class="form-control" id="title" name="title" readonly>
@@ -58,6 +54,7 @@
                             <textarea type="text" style="height: 120px" class="form-control" id="mission" name="mission" readonly>{{ $aboutUs->mission }}</textarea>
                         </div>
                     </div>
+                    <a href="{{ route('website.aboutUs.edit', $aboutUs->id) }}" class="btn btn-primary"><i class="bi bi-pencil-square"></i> Edit</a>
                 </div>
               </div>
         </div>

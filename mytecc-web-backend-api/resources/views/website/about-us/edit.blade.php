@@ -55,8 +55,9 @@
                         </div>
                         <div class="form-group mb-2 col-md-6">
                             <label for="image">Image</label>
+                            <img src="{{ asset($aboutUs->image) }}" class="form-control mb-2" style="width:auto; height:200px;" id="image" name="image">
                             <input type="file" value="{{ (old('image')) ? old('image') : $aboutUs->image }}" class="form-control" id="image" name="image">
-                            <small><span class="text-danger">*</span>Only accept .jpg .jpeg .png and max file size 500kb</small>
+                            <span><i class="bi bi-info-circle"></i> Only accept .jpg .jpeg .png and max file size 500kb</span>
                             @if ($errors->any('image'))
                                 <span class="text-danger" role="alert">
                                     {{ $errors->first('image') }}
