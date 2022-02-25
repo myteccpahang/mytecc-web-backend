@@ -20,7 +20,7 @@
             <div class="card">
                 <div class="card-header">
                     <div class="d-flex justify-content-between">
-                        <h4>Edit Profile</h4>
+                        <h4>Add Team Member</h4>
                     </div>
                 </div>
 
