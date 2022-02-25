@@ -12,6 +12,7 @@ class TeamMembers extends Model
     protected $fillable = [
         'name',
         'role',
+        'session',
         'img',
         'phone',
         'instagram',

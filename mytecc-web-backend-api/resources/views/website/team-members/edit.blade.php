@@ -48,6 +48,15 @@
                             @endif
                         </div>
                         <div class="form-group mb-2">
+                            <label for="session">Session</label>
+                            <input type="text" value="{{ (old('session')) ? old('session') : $member->session }}" class="form-control" id="session" name="session">
+                            @if ($errors->any('session'))
+                                <span class="text-danger" role="alert">
+                                    {{ $errors->first('session') }}
+                                </span>
+                            @endif
+                        </div>
+                        <div class="form-group mb-2">
                             <label for="role">Image</label>
                             <input type="file" value="{{ $member->img }}" class="form-control" id="img" name="img">
                             <span><i class="bi bi-info-circle"></i> Only accept .jpg .jpeg .png and max file size 500kb</span>
