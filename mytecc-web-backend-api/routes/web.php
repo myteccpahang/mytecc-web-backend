@@ -11,6 +11,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminAccountController;
 use App\Http\Controllers\Homepage\AboutUsController;
 use App\Http\Controllers\Homepage\ProgramController;
+use App\Http\Controllers\Homepage\TeamMembersController;
 use App\Http\Controllers\LinkController;
 
 /*
@@ -83,11 +84,24 @@ Route::prefix('admin')->group(function () {
         Route::post('program-and-activity/store', [ProgramController::class, 'store'])->name('website.programAndActivity.store');
 
         Route::get('program-and-activity', [ProgramController::class, 'index'])->name('website.programAndActivity');
+        Route::get('program-and-activity/{id}', [ProgramController::class, 'show'])->name('website.programAndActivity.show');
 
         Route::get('program-and-activity/{id}/edit', [ProgramController::class, 'edit'])->name('website.programAndActivity.edit');
         Route::patch('program-and-activity/{id}/update', [ProgramController::class, 'update'])->name('website.programAndActivity.update');
 
+        Route::delete('program-and-activity/{id}/delete', [ProgramController::class, 'destroy'])->name('website.programAndActivity.delete');
+
         // Team Members CRUD Routes
-        Route::view('team-members', 'website.teamMembers')->name('website.teamMembers'); // temporary
+        Route::get('team-members/create', [TeamMembersController::class, 'create'])->name('website.teamMembers.create');
+        Route::post('team-members/store', [TeamMembersController::class, 'store'])->name('website.teamMembers.store');
+
+        Route::get('team-members', [TeamMembersController::class, 'index'])->name('website.teamMembers.index');
+        Route::get('team-members/{id}', [TeamMembersController::class, 'show'])->name('website.teamMembers.show');
+
+        Route::get('team-members/{id}/edit', [TeamMembersController::class, 'edit'])->name('website.teamMembers.edit');
+        Route::patch('team-members/{id}/update', [TeamMembersController::class, 'update'])->name('website.teamMembers.update');
+
+        Route::delete('team-members/{id}/delete', [TeamMembersController::class, 'destroy'])->name('website.teamMembers.delete');
+
     });
 });
