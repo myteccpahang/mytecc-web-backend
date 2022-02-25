@@ -45,6 +45,7 @@ class TeamMembersController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'role' => 'required|string|max:255',
+            'session' => 'required|string|max:255',
             'phone' => 'required|string|max:255',
             'instagram' => 'required|string|max:255',
             'img'=>'required|mimes:jpg,jpeg,png|max:500', // max 500kb
@@ -61,6 +62,7 @@ class TeamMembersController extends Controller
             TeamMembers::create([
                 'name' => $request->name,
                 'role' => $request->role,
+                'session' => $request->session,
                 'phone' => $request->phone,
                 'instagram' => $request->instagram,
                 'img' => $imagePath,
@@ -112,6 +114,7 @@ class TeamMembersController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'role' => 'required|string|max:255',
+            'session' => 'required|string|max:255',
             'phone' => 'required|string|max:255',
             'instagram' => 'required|string|max:255',
             'img'=>'required|mimes:jpg,jpeg,png|max:500', // max 500kb
@@ -128,6 +131,7 @@ class TeamMembersController extends Controller
             $program->update([
                 'name' => $request->name,
                 'role' => $request->role,
+                'session' => $request->role,
                 'phone' => $request->phone,
                 'instagram' => $request->instagram,
                 'img' => $imagePath,
