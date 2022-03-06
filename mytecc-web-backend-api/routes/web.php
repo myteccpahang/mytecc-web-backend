@@ -13,6 +13,7 @@ use App\Http\Controllers\Homepage\AboutUsController;
 use App\Http\Controllers\Homepage\ProgramController;
 use App\Http\Controllers\Homepage\TeamMembersController;
 use App\Http\Controllers\LinkController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -69,6 +70,16 @@ Route::prefix('admin')->group(function () {
     Route::patch('links/{id}/update', [LinkController::class, 'update'])->name('links.update');
 
     Route::delete('links/{id}/delete', [LinkController::class, 'destroy'])->name('links.delete');
+
+    // Users CRUD Routes
+    Route::get('users/create', [UserController::class, 'create'])->name('users.create');
+    Route::post('users/store', [UserController::class, 'store'])->name('users.store');
+    Route::get('users', [UserController::class, 'index'])->name('users.index');
+    Route::get('users/{id}', [UserController::class, 'show'])->name('users.show');
+
+    Route::get('users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
+    Route::patch('users/{id}/update/account', [UserController::class, 'updateAccount'])->name('users.update.account');
+    Route::patch('users/{id}/update/profile', [UserController::class, 'updateProfile'])->name('users.update.profile');
 
     // Website
     Route::prefix('website')->group(function () {

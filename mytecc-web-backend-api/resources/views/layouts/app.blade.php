@@ -70,7 +70,7 @@
                             </li> --}}
                             {{-- ecommerce section --}}
                             <li>
-                                <a href="#submenu3" class="nav-link px-0 align-middle link-danger disabled">
+                                <a href="{{ route('users.index') }}" class="nav-link px-0 align-middle link-danger">
                                     <i class="fs-4 bi-people"></i>
                                     <span class="ms-1 d-none d-sm-inline">Users</span>
                                 </a>
