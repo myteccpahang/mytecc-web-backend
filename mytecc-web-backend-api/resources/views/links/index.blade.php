@@ -34,7 +34,7 @@
                                 <tr>
                                     <th class="text-center">#</th>
                                     <th>Link Name</th>
-                                    <th>Link URL</th>
+                                    <th class="text-center">Link URL</th>
                                     <th class="text-center">Index</th>
                                     <th class="text-center">Status</th>
                                     <th class="text-center">Action</th>

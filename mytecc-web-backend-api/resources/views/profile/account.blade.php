@@ -30,12 +30,6 @@
 
                 <div class="card-body p-5">
                     <div class="form-group col-md-6 mb-3">
-                        <div class="input-group">
-                            <span class="input-group-text" id="basic-addon1">#</span>
-                            <input type="number" value="{{ $admin->id }}" class="form-control" aria-describedby="basic-addon1" readonly>
-                        </div>
-                    </div>
-                    <div class="form-group col-md-6 mb-3">
                         <label for="username" class="form-label">Username</label>
                         <input type="text" value="{{ (old('username')) ? old('username') : $admin->username }}" class="form-control" id="username" readonly>
                     </div>
