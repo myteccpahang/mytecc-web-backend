@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Links')
+@section('title', 'Users')
 @section('content')
 <div class="container">
 
@@ -9,7 +9,7 @@
             <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
                 <ol class="breadcrumb mb-0">
                     <li class="breadcrumb-item"><a href="{{ route('dashboard') }}" class="link-danger">Dashboard</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Links</li>
+                    <li class="breadcrumb-item active" aria-current="page">Users</li>
                 </ol>
             </nav>
         </div>
@@ -20,9 +20,9 @@
             <div class="card">
                 <div class="card-header">
                     <div class="d-flex justify-content-between">
-                        <h4>Links</h4>
+                        <h4>Users</h4>
                         <div>
-                            <a href="{{ route('links.create') }}" class="btn btn-success"><i class="bi bi-plus-lg"></i> Link</a>
+                            <a href="{{ route('users.create') }}" class="btn btn-success"><i class="bi bi-plus-lg"></i> User</a>
                         </div>
                     </div>
                 </div>
@@ -33,28 +33,30 @@
                             <thead class="table-light">
                                 <tr>
                                     <th class="text-center">#</th>
-                                    <th>Link Name</th>
-                                    <th class="text-center">Link URL</th>
-                                    <th class="text-center">Index</th>
+                                    <th>Userame</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
                                     <th class="text-center">Status</th>
                                     <th class="text-center">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @if ($links->count())
-                                    @foreach ($links as $link)
+                                @if ($users->count())
+                                    @foreach ($users as $user)
                                         <tr>
-                                            <td class="align-middle text-center">{{ $link->id }}</td>
-                                            <td class="align-middle text-uppercase text-nowrap">{{ $link->link_name }}</td>
+                                            <td class="align-middle text-center">{{ $user->id }}</td>
+                                            <td class="align-middle">{{ $user->username }}</td>
+                                            <td class="align-middle">{{ $user->first_name }}</td>
+                                            <td class="align-middle">{{ $user->last_name }}</td>
+                                            <td class="align-middle"><a href="mailto:{{ $user->email }}" class="link-danger">{{ $user->email }}</a></td>
+                                            <td class="align-middle"><a href="tel:{{ $user->phone }}" class="link-danger">{{ $user->phone }}</a></td>
                                             <td class="align-middle text-center">
-                                                <a href="{{ $link->link_url }}" target="_blank"><i class="bi bi-box-arrow-up-right"></i></a>
-                                            </td>
-                                            <td class="align-middle text-center">{{ $link->index }}</td>
-                                            <td class="align-middle text-center">
-                                                @if ($link->status == "Enabled")
-                                                    <span class="badge rounded-pill bg-success">{{ $link->status }}</span>
+                                                @if ($user->status == "Enabled")
+                                                    <span class="badge rounded-pill bg-success">{{ $user->status }}</span>
                                                 @else
-                                                    <span class="badge rounded-pill bg-danger">{{ $link->status }}</span>
+                                                    <span class="badge rounded-pill bg-danger">{{ $user->status }}</span>
                                                 @endif
                                             </td>
                                             <td class="align-middle text-center">
@@ -63,15 +65,8 @@
                                                         <i class="bi bi-three-dots"></i>
                                                     </button>
                                                     <ul class="dropdown-menu dropdown-menu-end">
-                                                        <li><a href="{{ route('links.show', $link->id) }}" class="dropdown-item" type="button">View</a></li>
-                                                        <li><a href="{{ route('links.edit', $link->id) }}" class="dropdown-item" type="button">Edit</a></li>
-                                                        <li>
-                                                            <form action="{{ route('links.delete', $link->id) }}" method="POST">
-                                                                @csrf
-                                                                @method('DELETE')
-                                                                <button type="submit" class="dropdown-item text-danger">Delete</button>
-                                                            </form>
-                                                        </li>
+                                                        <li><a href="{{ route('users.show', $user->id) }}" class="dropdown-item" type="button">View</a></li>
+                                                        <li><a href="{{ route('users.edit', $user->id) }}" class="dropdown-item" type="button">Edit</a></li>
                                                     </ul>
                                                 </div>
                                             </td>
@@ -79,7 +74,7 @@
                                     @endforeach
                                 @else
                                     <tr>
-                                        <td colspan="6" class="align-middle text-center py-3">There is no data</td>
+                                        <td colspan="8" class="align-middle text-center py-3">There is no data</td>
                                     </tr>
                                 @endif
 
@@ -88,8 +83,8 @@
                     </div>
 
                     <div class="d-flex justify-content-between mt-3">
-                        <small>Showing {{$links->count()}} of {{ $links->total() }} link(s).</small>
-                        {!! $links->links() !!}
+                        <small>Showing {{$users->count()}} of {{ $users->total() }} user(s).</small>
+                        {!! $users->links() !!}
                     </div>
                 </div>
             </div>
