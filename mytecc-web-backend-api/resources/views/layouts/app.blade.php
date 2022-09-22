@@ -49,7 +49,7 @@
                             </li>
                             {{-- Web CMS --}}
                             <li>
-                                <a href="{{ route('website.aboutUs') }}" class="nav-link px-0 align-middle link-danger">
+                                <a href="#submenu2" class="nav-link px-0 align-middle link-danger disabled">
                                     <i class="fs-4 bi bi-laptop"></i>
                                     <span class="ms-1 d-none d-sm-inline">Website</span>
                                 </a>

@@ -130,7 +130,7 @@
                         <span>Apps Environment</span>
                     </h5>
                     <div class="card-text">
-                        <p class="mb-1">Env: {{ env('APP_ENV') }}</p>
+                        <p class="mb-1">Env: {{ env("APP_ENV", "Local") }}</p>
                         <p class="mb-1">
                             <a href="https://www.w3schools.com/php/" target="_blank" class="link-dark">PHP v{{ PHP_VERSION }}</a>
                         </p>

@@ -82,37 +82,37 @@ Route::prefix('admin')->group(function () {
     Route::patch('users/{id}/update/profile', [UserController::class, 'updateProfile'])->name('users.update.profile');
 
     // Website
-    Route::prefix('website')->group(function () {
+    // Route::prefix('website')->group(function () {
 
-        // About Us CRUD Routes
-        Route::get('about-us/{id}/edit', [AboutUsController::class, 'edit'])->name('website.aboutUs.edit');
-        Route::patch('about-us/{id}/update', [AboutUsController::class, 'update'])->name('website.aboutUs.update');
+    //     // About Us CRUD Routes
+    //     Route::get('about-us/{id}/edit', [AboutUsController::class, 'edit'])->name('website.aboutUs.edit');
+    //     Route::patch('about-us/{id}/update', [AboutUsController::class, 'update'])->name('website.aboutUs.update');
 
-        Route::get('about-us', [AboutUsController::class, 'index'])->name('website.aboutUs');
+    //     Route::get('about-us', [AboutUsController::class, 'index'])->name('website.aboutUs');
 
-        // Program & Activity CRUD Routes
-        Route::get('program-and-activity/create', [ProgramController::class, 'create'])->name('website.programAndActivity.create');
-        Route::post('program-and-activity/store', [ProgramController::class, 'store'])->name('website.programAndActivity.store');
+    //     // Program & Activity CRUD Routes
+    //     Route::get('program-and-activity/create', [ProgramController::class, 'create'])->name('website.programAndActivity.create');
+    //     Route::post('program-and-activity/store', [ProgramController::class, 'store'])->name('website.programAndActivity.store');
 
-        Route::get('program-and-activity', [ProgramController::class, 'index'])->name('website.programAndActivity');
-        Route::get('program-and-activity/{id}', [ProgramController::class, 'show'])->name('website.programAndActivity.show');
+    //     Route::get('program-and-activity', [ProgramController::class, 'index'])->name('website.programAndActivity');
+    //     Route::get('program-and-activity/{id}', [ProgramController::class, 'show'])->name('website.programAndActivity.show');
 
-        Route::get('program-and-activity/{id}/edit', [ProgramController::class, 'edit'])->name('website.programAndActivity.edit');
-        Route::patch('program-and-activity/{id}/update', [ProgramController::class, 'update'])->name('website.programAndActivity.update');
+    //     Route::get('program-and-activity/{id}/edit', [ProgramController::class, 'edit'])->name('website.programAndActivity.edit');
+    //     Route::patch('program-and-activity/{id}/update', [ProgramController::class, 'update'])->name('website.programAndActivity.update');
 
-        Route::delete('program-and-activity/{id}/delete', [ProgramController::class, 'destroy'])->name('website.programAndActivity.delete');
+    //     Route::delete('program-and-activity/{id}/delete', [ProgramController::class, 'destroy'])->name('website.programAndActivity.delete');
 
-        // Team Members CRUD Routes
-        Route::get('team-members/create', [TeamMembersController::class, 'create'])->name('website.teamMembers.create');
-        Route::post('team-members/store', [TeamMembersController::class, 'store'])->name('website.teamMembers.store');
+    //     // Team Members CRUD Routes
+    //     Route::get('team-members/create', [TeamMembersController::class, 'create'])->name('website.teamMembers.create');
+    //     Route::post('team-members/store', [TeamMembersController::class, 'store'])->name('website.teamMembers.store');
 
-        Route::get('team-members', [TeamMembersController::class, 'index'])->name('website.teamMembers.index');
-        Route::get('team-members/{id}', [TeamMembersController::class, 'show'])->name('website.teamMembers.show');
+    //     Route::get('team-members', [TeamMembersController::class, 'index'])->name('website.teamMembers.index');
+    //     Route::get('team-members/{id}', [TeamMembersController::class, 'show'])->name('website.teamMembers.show');
 
-        Route::get('team-members/{id}/edit', [TeamMembersController::class, 'edit'])->name('website.teamMembers.edit');
-        Route::patch('team-members/{id}/update', [TeamMembersController::class, 'update'])->name('website.teamMembers.update');
+    //     Route::get('team-members/{id}/edit', [TeamMembersController::class, 'edit'])->name('website.teamMembers.edit');
+    //     Route::patch('team-members/{id}/update', [TeamMembersController::class, 'update'])->name('website.teamMembers.update');
 
-        Route::delete('team-members/{id}/delete', [TeamMembersController::class, 'destroy'])->name('website.teamMembers.delete');
+    //     Route::delete('team-members/{id}/delete', [TeamMembersController::class, 'destroy'])->name('website.teamMembers.delete');
 
-    });
+    // });
 });

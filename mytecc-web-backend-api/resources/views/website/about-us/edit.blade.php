@@ -27,7 +27,7 @@
                          <a class="nav-link link-dark" href="{{ route('website.programAndActivity') }}">Program & Activity</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link link-dark" href="{{ route('website.teamMembers') }}">Team Members</a>
+                            <a class="nav-link link-dark" href="{{ route('website.teamMembers.index') }}">Team Members</a>
                         </li>
                     </ul>
                 </div>
