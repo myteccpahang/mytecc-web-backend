@@ -121,13 +121,17 @@
                             @endif
                             </div>
                             <div class="form-group mb-2">
-                                <label for="address">Address</label>
+                                <label for="address">Address line 1</label>
                                 <input type="address" value="{{ (old('address')) ? old('address') : $user->address }}" class="form-control" id="address" name="address">
                                 @if ($errors->any('address'))
                                     <span class="text-danger" role="alert">
                                         {{ $errors->first('address') }}
                                     </span>
                                 @endif
+                            </div>
+                            <div class="form-group mb-2">
+                                <label for="address2">Address line 2 <span class="text-muted">(optional)</span></label>
+                                <input value="{{ (old('address2')) ? old('address2') : $user->address2 }}" class="form-control" id="address2" name="address2">
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="postcode">Postcode</label>
@@ -147,14 +151,28 @@
                                 </span>
                             @endif
                             </div>
+                            {{-- Add select option for state --}}
                             <div class="form-group col-md-4">
                                 <label for="state">State</label>
-                                <input type="text" value="{{ (old('state')) ? old('state') : $user->state }}" class="form-control" id="state" name="state">
-                                @if ($errors->any('state'))
-                                <span class="text-danger" role="alert">
-                                    {{ $errors->first('state') }}
-                                </span>
-                            @endif
+                                <select name="state" id="state" class="form-select">
+                                    <option value="{{ (old('state')) ? old('state') : $user->state }}">{{ (old('state')) ? old('state') : $user->state }}</option>
+                                    <option value="Johor">Johor</option>
+                                    <option value="Kedah">Kedah</option>
+                                    <option value="Kelantan">Kelantan</option>
+                                    <option value="Melaka">Melaka</option>
+                                    <option value="N. Sembilan">N. Sembilan</option>
+                                    <option value="Pahang">Pahang</option>
+                                    <option value="P. Pinang">P. Pinang</option>
+                                    <option value="Perak">Perak</option>
+                                    <option value="Perlis">Perlis</option>
+                                    <option value="Sabah">Sabah</option>
+                                    <option value="Sarawak">Sarawak</option>
+                                    <option value="Selangor">Selangor</option>
+                                    <option value="Terengganu">Terengganu</option>
+                                    <option value="WP Kuala Lumpur">WP Kuala Lumpur</option>
+                                    <option value="WP Labuan">WP Labuan</option>
+                                    <option value="WP Putrajaya">WP Putrajaya</option>
+                                </select>
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary">Update</button>

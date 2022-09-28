@@ -61,8 +61,12 @@
                             </select>
                         </div>
                         <div class="form-group mb-2">
-                            <label for="address">Address</label>
+                            <label for="address">Address line 1</label>
                             <input type="address" value="{{ $user->address }}" class="form-control" id="address" readonly>
+                        </div>
+                        <div class="form-group mb-2">
+                            <label for="address2">Address line 2 <span class="text-muted">(optional)</span></label>
+                            <input value="{{ $user->address2 }}" class="form-control" id="address2" readonly>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="postcode">Postcode</label>
